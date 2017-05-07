@@ -7,15 +7,15 @@
         <link type="text/css" href="<?php echo public_url() ?>/site/css/product.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/slide-flim.css" rel="stylesheet" />
         <!-- End CSS -->
-        
+
         <!-- the Javascript -->
-    
+
         <script type="text/javascript" src="<?php echo public_url() ?>/js/jquery/jquery.min.js"></script>
 		<script type="text/javascript" src="<?php echo public_url() ?>/js/jquery/jquery-ui.min.js"></script>
 		<link rel="stylesheet" href="<?php echo public_url() ?>/js/jquery/jquery-ui/custom-theme/jquery-ui-1.8.21.custom.css" type="text/css">
-	    
+
         <script src="<?php echo public_url() ?>/site/js/script.js"></script>
-        
+
         <!-- raty -->
 		 <script type="text/javascript" src="<?php echo public_url() ?>site/raty/jquery.raty.min.js"></script>
 		 <script type="text/javascript">
@@ -31,7 +31,7 @@
 	     </script>
 	     <style>.raty img{width:16px !important;height:16px; !important;}</style>
 	     <!--End raty -->
-     
+
         <!-- End Javascript -->
         <script type="text/javascript">
 	        $(document).ready(function(){
@@ -60,5 +60,5 @@
 		    text-decoration: none;
 		    width: auto;
 		}
-		</style>		
-<title>Học lập trình website với PHP và MYSQL</title>
+		</style>
+<title>Thydu Shop</title>
