@@ -10,7 +10,7 @@ Class Home extends MY_Controller
 		$input = array();
 		$slide_list   = $this->slide_model->get_list();// get du lieu slile
 		// lay SP moi
-		//$input['limit'] = array(0,2);
+		$input['limit'] = array('3','0');
 		$input['order'] = array('id','desc');
 		$product_list = $this->Product_model->get_list($input);
 		// trueyn vao bien data
@@ -26,13 +26,15 @@ Class Home extends MY_Controller
 	function product(){
 		$this->load->model('product_model');// load san pham
 		$data = array();
+		$input = array();
 		// lay di truyen vao
 		$id = $this->uri->rsegment('3');
 		$id = intval($id);
-		$product = $this->product_model->get_info($id);
+		$product = $this->product_model->call_product_full_info($id);
 		$data['product'] = $product;
 
 		$data['temp'] = 'site/product/product';//view index home
+		//pre($data);
 		$this->load->view('site/layout', $data);
 	}
 }

@@ -13,13 +13,13 @@
               <a  href="" title="Sản phẩm"><?php echo $sp->name; ?></a>
 	              </h3>
                   <div class='product_img'>
-                      <a  href="<?php echo home_url('product/'.$sp->id) ?>" title="Sản phẩm">
-                        <img src="<?php echo base_url('upload/product/'.$sp->image_link)?>" alt=''/>
+                      <a  href="<?php echo home_url('product/'.$sp->id.'/'.urlencode($sp->name)) ?>" title="Sản phẩm">
+                        <img src="<?php echo_product_iamge_upload($sp->image_link)?>" alt=''/>
                       </a>
                   </div>
-                      <p class='price'><?php echo $sp->price; ?>
+                      <p class='price'><?php number_fm_vnd($sp->price); ?>
 												<?php if($sp->discount > 0){ ?>
-												<span class='price_old'><?php echo $sp->price - $sp->discount ?></span>
+												<span class='price_old'><?php number_fm_vnd($sp->price - $sp->discount); ?></span>
 												<?php } ?>
 										  </p>
                       <center>

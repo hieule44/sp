@@ -6,7 +6,7 @@
 		      <div class="box-content-center product"><!-- The box-content-center -->
 		           <div class='product_view_img'>
 		                <a href="../upload/product/product13.jpg" class="jqzoom" rel='gal1'  title="triumph" >
-				            <img  src="<?php echo base_url('upload/product/'.$product->image_link)?>" alt='Tivi LG 520' style="width:280px !important">
+				            <img  src="<?php echo_product_iamge_upload($product->image_link)?>" alt='Tivi LG 520' style="width:280px !important">
 				        </a>
 				         <div class='clear' style='height:10px'></div>
 				         <div class="clearfix" >
@@ -24,13 +24,13 @@
 		               <h1><?php echo $product->name; ?></h1>
 
 		               <p class='option'>
-		                  Giá: <span class='product_price'><?php echo $product->price; ?></span>
+		                  Giá: <span class='product_price'><?php number_fm_vnd($product->price); ?></span>
 		               </p>
 
 		                <p class='option'>
 		                  Danh mục:
 		                  <a href="http://localhost/webphp/danh-muc-LG/15.html" title="LG">
-		                     <b>LG</b>
+		                     <b><?php echo $product->name_catalog; ?></b>
 		                  </a>
 		               </p>
 
@@ -38,15 +38,15 @@
 		                  Lượt xem: <b><?php echo $product->view; ?></b>
 		               </p>
 		               		               <p class='option'>
-		                  Bảo hành: <b>12 tháng</b>
+		                  Bảo hành: <b><?php echo $product->warranty; ?></b>
 		               </p>
 		               		               		               <p class='option'>
-		                  Tặng quà: <b>0</b>
+		                  Tặng quà: <b><?php echo $product->gifts; ?></b>
 		               </p>
 
 		               Đánh giá &nbsp;
                        <span class='raty_detailt' style = 'margin:5px' id='9' data-score='4'></span>
-                       | Tổng số: <b  class='rate_count'>1</b>
+                       | Tổng số: <b  class='rate_count'><?php echo $product->rate_count; ?></b>
 
 		               <div class='action'>
 				            <a class='button' style='float:left;padding:8px 15px;font-size:16px' href="http://localhost/webphp/them-vao-gio-9.html" title='Mua ngay'>Thêm vào giỏ hàng</a>
@@ -70,9 +70,9 @@
 		            <table width="100%" cellspacing="0" cellpadding="3" border="0" class="tbsicons">
 					           <tbody>
 					           <tr>
-					                    <td width="25%"><img alt="Phục vụ chu đáo" src="images/icon-services.png"> <div>Phục vụ chu đáo</div></td>
-					                    <td width="25%"><img alt="Giao hàng đúng hẹn" src="images/icon-shipping.png"><div>Giao hàng đúng hẹn</div></td>
-					                    <td width="25%"><img alt="Đổi hàng trong 24h" src="images/icon-delivery.png"> <div>Đổi hàng trong 24h</div></td>
+					            <td width="25%"><img alt="Phục vụ chu đáo" src="<?php echo base_url('upload/icon/icon-services.png')?>" <div>Phục vụ chu đáo</div></td>
+					            <td width="25%"><img alt="Giao hàng đúng hẹn" src="<?php echo base_url('upload/icon/icon-shipping.png')?>"><div>Giao hàng đúng hẹn</div></td>
+					            <td width="25%"><img alt="Đổi hàng trong 24h" src="<?php echo base_url('upload/icon/icon-delivery.png')?>"> <div>Đổi hàng trong 24h</div></td>
 					           </tr>
 					          </tbody>
 					</table>
