@@ -26,7 +26,7 @@
 			</div>
 
 			<center>
-				<img src="<?php echo public_url() ?>/site/images/bank.png" />
+			<!--	<img src="<?php echo public_url() ?>/site/images/bank.png" /> -->
 		  </center>
 
 		  <div class="footer">
