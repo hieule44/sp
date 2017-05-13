@@ -29,7 +29,7 @@
 
 		                <p class='option'>
 		                  Danh mục:
-		                  <a href="http://localhost/webphp/danh-muc-LG/15.html" title="LG">
+		                  <a href="<?php echo home_url('catalog/'.$product->catalog_id.'/'.urlencode($product->name_catalog)) ?>" title="LG">
 		                     <b><?php echo $product->name_catalog; ?></b>
 		                  </a>
 		               </p>
@@ -94,8 +94,9 @@
 		<!-- comment facebook -->
 		<center>
 <div id="fb-root"></div>
-<script src="http://connect.facebook.net/en_US/all.js#appId=170796359666689&amp;xfbml=1"></script>
+<!--<script src="http://connect.facebook.net/en_US/all.js#appId=170796359666689&amp;xfbml=1"></script>
 <div class="fb-comments" data-href="http://localhost/webphp/index.php/san-pham-Tivi-LG-520/9.html" data-num-posts="5" data-width="550" data-colorscheme="light"></div>
+-->
 </center>
 	</div>
 	<div id="tab3" style="display: none;">

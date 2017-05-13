@@ -14,7 +14,7 @@
 <div class='top'><!-- The top -->
   <div id="logo"><!-- the logo -->
            <a  href="" title="Học lập trình website với PHP và MYSQL">
-	           <img src="<?php echo public_url() ?>/site/images/logo.jpg"  alt="Học lập trình website với PHP và MYSQL"/>
+	           <img src="<?php echo public_url() ?>/site/images/logo_shop.jpg"  alt="Học lập trình website với PHP và MYSQL"/>
 	       </a>
   </div><!-- End logo -->
 
