@@ -7,6 +7,10 @@ function home_url($url=''){
 	return base_url('home/'.$url);
 }
 
+function product_url($url=''){
+	return base_url('product/'.$url);
+}
+
 function pre($list, $exit = true)
 {
 	echo '<pre>';

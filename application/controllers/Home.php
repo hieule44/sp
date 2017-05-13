@@ -21,22 +21,6 @@ Class Home extends MY_Controller
 		//print_r($product_list);
 		$this->load->view('site/layout', $data);
 		//$this->load->view('site/demo');// an tam thoi
-	}
-
-	function product(){
-		$this->load->model('product_model');// load san pham
-		$data = array();
-		$input = array();
-		// lay di truyen vao
-		$id = $this->uri->rsegment('3');
-		$id = intval($id);
-		$product 			= $this->product_model->call_product_full_info($id);
-		//$product_same = $this->product_model->call_product_same_full_info($id);	
-		$data['product'] = $product;
-		//$data['product_same'] = $product_same;
-		$data['temp'] = 'site/product/product';//view index home
-		//pre($product_same);
-		$this->load->view('site/layout', $data);
-	}
+	}	
 }
 ?>

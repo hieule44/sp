@@ -96,13 +96,13 @@
 		<div class="content-box"><!-- The content-box -->
 	        <ul class="catalog-main">
 	        <?php foreach($catalog_list as $row): ?>
-                <li><span><a href="<?php echo $row->id ?>" title="<?php echo $row->name ?>"><?php echo $row->name ?></a></span>
+                <li><span><a href="<?php echo product_url('catalog/'.$row->id.'/'.urlencode($row->name)) ?>" title="<?php echo $row->name ?>"><?php echo $row->name ?></a></span>
                      <!-- lay danh sach danh muc con -->
                      <?php if(!empty($row->con)): ?>
              	 	<ul class="catalog-sub">
              	 		<?php foreach($row->con as $con):  ?>
              	 	    <li>
-                            <a href="<?php echo home_url('catalog/'.$con->id.'/'.urlencode($con->name)) ?>" title=" <?php echo $con->name ?>"><?php echo $con->name ?></a>
+                            <a href="<?php echo product_url('catalog/'.$con->id.'/'.urlencode($con->name)) ?>" title=" <?php echo $con->name ?>"><?php echo $con->name ?></a>
                         </li>
                     	<?php endforeach; ?>
                     </ul>

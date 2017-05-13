@@ -1,13 +1,10 @@
-<?php
-	$this->load->view('site/slide', $this->data);
-?>
 <div class="box-center"><!-- The box-center product-->
   <div class="tittle-box-center">
-		<h2>Sản phẩm mới</h2>
+		<h2><?php echo $catalog->name; ?></h2>
 	</div>
 	<div class="box-content-center product"><!-- The box-content-center -->
 	<!-- begin 1 san pham -->
-		<?php foreach ($product_list as $sp):?>
+		<?php foreach ($list as $sp):?>
 		   <div class='product_item'>
 	        <h3>
 	          <a  href="" title="<?php echo $sp->name; ?>"><?php echo $sp->name; ?></a>
@@ -40,3 +37,6 @@
 					<!-- end 1 san pham -->
 	</div><!-- End box-content-center -->
 </div>	<!-- End box-center product-->
+<div class="pagination">
+ <?php echo $this->pagination->create_links(); ?>
+</div>
