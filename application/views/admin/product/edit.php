@@ -1,8 +1,8 @@
 <?php $this->load->view('admin/product/head',$this->data); ?>
 <div class="wrapper">
 <script type="text/javascript">
-	
-</script>   
+
+</script>
 	   	<!-- Form -->
 <form class="form" id="form" action="" method="post" enctype="multipart/form-data">
 	<fieldset>
@@ -11,14 +11,14 @@
 				<img src="<?php echo public_url('admin')?>/images/icons/dark/add.png" class="titleIcon">
 				<h6>Cập nhật Sản phẩm</h6>
 			</div>
-					
+
 			<ul class="tabs">
 		        <li><a href="#tab1">Thông tin chung</a></li>
 		        <li><a href="#tab2">SEO Onpage</a></li>
-		        <li><a href="#tab3">Bài viết</a></li>		                
+		        <li><a href="#tab3">Bài viết</a></li>
 			</ul>
 			<div class="tab_container">
-<!-- Tab 1 -->			
+<!-- Tab 1 -->
 				<div id="tab1" class="tab_content pd0">
 					<div class="formRow">
 						<label class="formLeft" for="param_name">Tên:<span class="req">*</span></label>
@@ -75,12 +75,12 @@
 
 <!-- Price -->
 					<div class="formRow">
-						<label class="formLeft" for="param_discount">Giảm giá (VND)<span></span>:
+						<label class="formLeft" for="param_discount">Giá khuyến mãi<span></span>:
 						</label>
 						<div class="formRight">
 							<span>
 								<input name="discount" value="<?php echo $product->discount ?>" style="width:100px" id="param_discount" class="format_number" type="text">
-								<img class="tipS" title="Số tiền giảm giá" style="margin-bottom:-8px" src="<?php echo public_url('admin')?>/crown/images/icons/notifications/information.png">
+								<img class="tipS" title="Giá bán khuyến mãi" style="margin-bottom:-8px" src="<?php echo public_url('admin')?>/crown/images/icons/notifications/information.png">
 							</span>
 							<span name="discount_autocheck" class="autocheck"></span>
 							<div name="discount_error" class="clear error"></div>
@@ -94,8 +94,8 @@
 						<div class="formRight">
 							<select name="catalog" class="left">
 									<option value="">-- Lựa chon danh mục --</option>
-									<?php foreach($catalogs as $rows): ?>		
-										<?php if(count($rows->subs) > 1):?>						     
+									<?php foreach($catalogs as $rows): ?>
+										<?php if(count($rows->subs) > 1):?>
 										    <optgroup label="<?php echo $rows->name ?>">
 										    	<?php foreach($rows->subs as $subs):?>
 							<option value="<?php echo $subs->id ?>" <?php if($subs->id == $product->catalog_id){echo 'selected';}?>><?php echo $subs->name ?></option>
@@ -104,9 +104,9 @@
 										<?php else: ?>
 											<option value="<?php echo $rows->id ?>" <?php if($rows->id == $product->catalog_id){echo 'selected';}?>><?php echo $rows->name ?></option>
 										<?php endif; ?>
-									<?php endforeach ?>    
-																		      
-									       
+									<?php endforeach ?>
+
+
 								</select>
 							<span name="cat_autocheck" class="autocheck"></span>
 							<div name="cat_error" class="clear error"><?php echo form_error('catalog') ?></div>
@@ -137,8 +137,8 @@
 						<div class="clear"></div>
 					</div>					         <div class="formRow hide"></div>
 				</div>
-<!-- Tab 2 -->						 
-			<div id="tab2" class="tab_content pd0">						     			
+<!-- Tab 2 -->
+			<div id="tab2" class="tab_content pd0">
 				<div class="formRow">
 					<label class="formLeft" for="param_site_title">Title:</label>
 					<div class="formRight">
@@ -168,7 +168,7 @@
 				</div>
 				<div class="formRow hide"></div>
 			</div>
-<!-- Tab 3 -->			
+<!-- Tab 3 -->
 			<div id="tab3" class="tab_content pd0">
 				<div class="formRow">
 					<label class="formLeft">Nội dung:</label>
@@ -181,7 +181,7 @@
 				<div class="formRow hide"></div>
 			</div>
 		</div><!-- End tab_container-->
-	        		
+
 	    <div class="formSubmit">
 	        <input type="submit" value="Cập nhật" class="redB">
 	        <input type="reset" value="Hủy bỏ" class="basic">

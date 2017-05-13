@@ -17,9 +17,13 @@
                         <img src="<?php echo_product_iamge_upload($sp->image_link)?>" alt=''/>
                       </a>
                   </div>
-                      <p class='price'><?php number_fm_vnd($sp->price); ?>
 												<?php if($sp->discount > 0){ ?>
-												<span class='price_old'><?php number_fm_vnd($sp->price - $sp->discount); ?></span>
+                      	<p class='price'><?php number_fm_vnd($sp->discount); ?>
+												<?php }else{?>
+												<p class='price'><?php number_fm_vnd($sp->price); ?>
+												<?php } ?>
+												<?php if($sp->discount > 0){ ?>
+												<span class='price_old'><?php number_fm_vnd($sp->price); ?></span>
 												<?php } ?>
 										  </p>
                       <center>
