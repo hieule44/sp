@@ -1,6 +1,6 @@
 <div class="box-center"><!-- The box-center product-->
   <div class="tittle-box-center">
-		<h2><?php echo $catalog->name; ?></h2>
+		<h2><?php echo $catalog->name; ?> (<?php echo count($list) ?> sản phẩm)</h2>
 	</div>
 	<div class="box-content-center product"><!-- The box-content-center -->
 	<!-- begin 1 san pham -->
