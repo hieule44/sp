@@ -1,3 +1,14 @@
+<!-- zoom image -->
+<script src="<?php echo public_url('site/'); ?>jqzoom_ev/js/jquery.jqzoom-core.js" type="text/javascript"></script>
+<link rel="stylesheet" href="<?php echo public_url('site/'); ?>jqzoom_ev/css/jquery.jqzoom.css" type="text/css">
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.jqzoom').jqzoom({
+            zoomType: 'standard',
+    });
+});
+</script>
+<!-- end zoom image -->
 
  <div class="box-center"><!-- The box-center product-->
              <div class="tittle-box-center">
@@ -5,18 +16,18 @@
 		      </div>
 		      <div class="box-content-center product"><!-- The box-content-center -->
 		           <div class='product_view_img'>
-		                <a href="../upload/product/product13.jpg" class="jqzoom" rel='gal1'  title="triumph" >
+		                <a href="<?php echo_product_iamge_upload($product->image_link)?>" class="jqzoom" rel='gal1'  title="triumph" >
 				            <img  src="<?php echo_product_iamge_upload($product->image_link)?>" alt='Tivi LG 520' style="width:280px !important">
 				        </a>
 				         <div class='clear' style='height:10px'></div>
 				         <div class="clearfix" >
 							<ul id="thumblist" >
 							    <li>
-							    <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '../upload/product/product13.jpg',largeimage: '../upload/product/product13.jpg'}">
-							    <img src='../upload/product/product13.jpg'>
+							    <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo_product_iamge_upload($product->image_link)?>',largeimage: '<?php echo_product_iamge_upload($product->image_link)?>'}">
+							    <img src='<?php echo_product_iamge_upload($product->image_link)?>'>
 							    </a>
 							    </li>
-							    							</ul>
+							</ul>
 						</div>
 		           </div>
 
@@ -43,17 +54,21 @@
 		               		               		               <p class='option'>
 		                  Tặng quà: <b><?php echo $product->gifts; ?></b>
 		               </p>
-
+									 <p class='option'>
 		               Đánh giá &nbsp;
                        <span class='raty_detailt' style = 'margin:5px' id='9' data-score='4'></span>
                        | Tổng số: <b  class='rate_count'><?php echo $product->rate_count; ?></b>
-
+										</p>
 		               <div class='action'>
 				            <a class='button' style='float:left;padding:8px 15px;font-size:16px' href="http://localhost/webphp/them-vao-gio-9.html" title='Mua ngay'>Thêm vào giỏ hàng</a>
 				            <div class='clear'></div>
 			            </div>
 
 		           </div>
+							 <div class='clear' style='height:15px'></div>
+							 <div class='product_content'>
+								<?php echo $product->content; ?>
+							 </div>
 		           <div class='clear' style='height:15px'></div>
 		           <center>
   <!-- AddThis Button BEGIN -->

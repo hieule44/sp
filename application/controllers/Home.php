@@ -10,7 +10,7 @@ Class Home extends MY_Controller
 		$input = array();
 		$slide_list   = $this->slide_model->get_list();// get du lieu slile
 		// lay SP moi
-		$input['limit'] = array('3','0');
+		$input['limit'] = array('9','0');
 		$input['order'] = array('id','desc');
 		$product_list = $this->Product_model->get_list($input);
 		// trueyn vao bien data
@@ -21,6 +21,6 @@ Class Home extends MY_Controller
 		//print_r($product_list);
 		$this->load->view('site/layout', $data);
 		//$this->load->view('site/demo');// an tam thoi
-	}	
+	}
 }
 ?>

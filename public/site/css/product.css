@@ -1,9 +1,8 @@
 .product .product_item
 {
 	border: 1px solid #DDDDDD;
-    border-radius: 10px;
-    height: 220px;
-    padding: 8px 0px;
+  border-radius: 10px;
+  padding: 8px 0px;
 	width:175px;
 	float:left;
 	text-align:center;
@@ -316,4 +315,11 @@ table.tbsicons td {
 .reply-review-frm
 {
 	margin-left:15px;
+}
+.product_content
+{
+	border: 1px solid #d0acac;
+	padding: 15px 5px;
+	font-size: 14px;
+	line-height: 18px;
 }
