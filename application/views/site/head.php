@@ -7,7 +7,7 @@
         <link type="text/css" href="<?php echo public_url() ?>/site/css/product.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/slide-flim.css" rel="stylesheet" />
         <!-- End CSS -->
-
+        <link rel="icon" href="<?php echo public_url() ?>/site/images/icon.png" type="image/x-icon" />
         <!-- the Javascript -->
 
         <script type="text/javascript" src="<?php echo public_url() ?>/js/jquery/jquery.min.js"></script>
