@@ -95,7 +95,7 @@
 							<select name="catalog" class="left">
 									<option value="">-- Lựa chon danh mục --</option>
 									<?php foreach($catalogs as $rows): ?>
-										<?php if(count($rows->subs) > 1):?>
+										<?php if(count($rows->subs) > 0):?>
 										    <optgroup label="<?php echo $rows->name ?>">
 										    	<?php foreach($rows->subs as $subs):?>
 							<option value="<?php echo $subs->id ?>" <?php if($subs->id == $product->catalog_id){echo 'selected';}?>><?php echo $subs->name ?></option>

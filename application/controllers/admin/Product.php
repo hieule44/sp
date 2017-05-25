@@ -1,6 +1,6 @@
-<?php 
+<?php
 /**
- * 
+ *
  */
  class Product extends MY_Controller
  {
@@ -13,11 +13,11 @@
  		$this->load->helper('form');
  		$this->load->library('pagination');
  	}
- 	
+
  	//lay danh sach danh muc sp
  	function index()
  	{
- 	
+
  		//lay so luong san pham
  		$total_rows = $this->product_model->get_total();
  		$this->data['total_rows'] = $total_rows;
@@ -30,7 +30,7 @@
  		$config['next_link'] = "Trang kế tiếp";
  		$config['prev_link'] = "Trang trước";
  		$this->pagination->initialize($config);
- 		
+
  		$segment = $this->uri->segment(4);
  		$segment = intval($segment);
 
@@ -45,7 +45,7 @@
  		$catalog = $this->input->get('catalog');
 
  		$id = intval($id);
- 		$catalog = intval($catalog); 		
+ 		$catalog = intval($catalog);
  		$input['where'] = array();
  		if($id>0){
  			$input['where']['id'] = $id;
@@ -70,28 +70,28 @@
  			$input['where'] = array('parent_id' => $rows->id);
  			$subs = $this->catalog_model->get_list($input);
  			$rows->subs=$subs;
- 		} 		
+ 		}
  		$this->data['catalogs'] = $catalogs;
- 		
+
  		//lấy message từ flashdata
  		$message = $this->session->flashdata('message');
  		$this->data['message'] = $message;
 
  		$this->data['temp'] = 'admin/product/index';
  		$this->load->view('admin/main',$this->data);
- 		
+
  	}
 
  	//them moi san pham
  	function add()
  	{
  		//neu co du lieu post thi kiem tra
- 		if ($this->input->post()) 
+ 		if ($this->input->post())
  		{
- 			
- 			$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required'); 
+
+ 			$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
  			$this->form_validation->set_rules('catalog', 'Thể loại', 'required');
- 			$this->form_validation->set_rules('price', 'Giá sản phẩm', 'required');			
+ 			$this->form_validation->set_rules('price', 'Giá sản phẩm', 'required');
 
  			//nhập ok
  			if($this->form_validation->run())
@@ -107,16 +107,16 @@
  				//lay ten file anh duoc upload len
  				$upload_path = './upload/product';
  				$upload_data = $this->upload_library->upload_file($upload_path,'image');
- 				$upload_datas = $this->upload_library->upload_files($upload_path,'image_list'); 				
+ 				$upload_datas = $this->upload_library->upload_files($upload_path,'image_list');
  				$image_link = '';
  				$image_list = array();
  				$image_list = $upload_datas;
  				$image_list = json_encode($image_list);
- 				if (isset($upload_data['file_name'])) 
+ 				if (isset($upload_data['file_name']))
  				{
  					$image_link = $upload_data['file_name'];
  				}
- 				
+
  				//data insert
  				$data = array(
  					'name' 			=> $name,
@@ -135,7 +135,7 @@
  					);
  				if ($this->product_model->create($data)) {
  					$this->session->set_flashdata('message','Thêm mới thành công');
- 				}else 
+ 				}else
  				{
  					$this->session->set_flashdata('message','Thêm không thành công');
  				}
@@ -151,12 +151,12 @@
  			$input['where'] = array('parent_id' => $rows->id);
  			$subs = $this->catalog_model->get_list($input);
  			$rows->subs=$subs;
- 		} 		
- 		$this->data['catalogs'] = $catalogs;
+ 		}
+ 		$this->data['catalogs'] = $catalogs;  
  		//load view add
  		$this->data['temp'] = 'admin/product/add';
  		$this->load->view('admin/main',$this->data);
- 	} 
+ 	}
 
  	//ham edit
  	function edit()
@@ -166,19 +166,19 @@
  		$id = intval($id);
  		$product = $this->product_model->get_info($id);
  		//nếu không có thông tin thì redir trang chính
- 		if (!$product) 
+ 		if (!$product)
  		{
  			$this->session->set_flashdata('message', 'Không tồn tại Admin này !');
  			redirect(admin_url('product'));
  		}
 
  		//neu co du lieu post thi kiem tra
- 		if ($this->input->post()) 
+ 		if ($this->input->post())
  		{
- 			
- 			$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required'); 
+
+ 			$this->form_validation->set_rules('name', 'Tên sản phẩm', 'required');
  			$this->form_validation->set_rules('catalog', 'Thể loại', 'required');
- 			$this->form_validation->set_rules('price', 'Giá sản phẩm', 'required');			
+ 			$this->form_validation->set_rules('price', 'Giá sản phẩm', 'required');
 
  			//nhập ok
  			if($this->form_validation->run())
@@ -195,21 +195,21 @@
  				//lay ten file anh duoc upload len
  				$upload_path = './upload/product';
  				$upload_data = $this->upload_library->upload_file($upload_path,'image');
- 				$upload_datas = $this->upload_library->upload_files($upload_path,'image_list'); 				
+ 				$upload_datas = $this->upload_library->upload_files($upload_path,'image_list');
  				$image_link = '';
  				$image_list = array();
  				$image_list = $upload_datas;
  				$image_list_js = json_encode($image_list);
- 				if (isset($upload_data['file_name'])) 
+ 				if (isset($upload_data['file_name']))
  				{
  					$image_link = $upload_data['file_name'];
  				}
- 				
+
  				//data insert
  				$data = array(
  					'name' 			=> $name,
  					'catalog_id' 	=> $catalog_id,
- 					'price' 		=> $price, 					
+ 					'price' 		=> $price,
  					'discount'		=> $discount,
  					'warranty'		=> $warranty,
  					'gifts'			=> $sale,
@@ -230,7 +230,7 @@
  				}
  				if ($this->product_model->update($id,$data)) {
  					$this->session->set_flashdata('message','Cập nhật thành công');
- 				}else 
+ 				}else
  				{
  					$this->session->set_flashdata('message','Cập nhật thành công');
  				}
@@ -246,9 +246,9 @@
  			$input['where'] = array('parent_id' => $rows->id);
  			$subs = $this->catalog_model->get_list($input);
  			$rows->subs=$subs;
- 		} 	
+ 		}
  		$this->data['catalogs'] = $catalogs;
- 		//	
+ 		//
  		$this->data['product'] = $product;
  		//load view add
  		$this->data['temp'] = 'admin/product/edit';
@@ -259,7 +259,7 @@
  	{
  		// lay thong tin san pham theo id
  		$id = $this->uri->rsegment('3');
- 		$this->_del($id); 		
+ 		$this->_del($id);
 
  		$this->session->set_flashdata('message', 'Xóa thành công !');
  		redirect(admin_url('product'));
@@ -295,13 +295,13 @@
  		{
 	 		foreach ($image_list as $img) {
 	 			$image_links = './upload/product/'.$img;
- 				if (file_exists($image_links)) 
+ 				if (file_exists($image_links))
  					{
  					unlink($image_links);
  					}
 	 		}
  		}
- 	}	
+ 	}
 
  }
  ?>
