@@ -10,7 +10,6 @@ div.wraper
 div.header
 {
   background:#fff;
-  width:980px;
   margin:0px auto;
 }
 
@@ -48,7 +47,7 @@ div.footer
     padding-bottom: 30px;
     padding-top: 5px;
 	padding:10px 15px;
-	
+
 }
 
 div.footer #footer_text
@@ -117,7 +116,6 @@ div.top
 .tittle-box-left,.tittle-box-right {
     background: url("../images/menu.png") repeat-x;
     border-bottom: 2px solid #FF9900;
-    border-radius: 3px;
     float: left;
     line-height: 28px;
     width: 190px;
@@ -212,9 +210,9 @@ div.top
 	top: 50%;
 	width: 150px !important;
 	z-index: 100001;
-	
+
 	opacity:0.8;
-	
+
 	-moz-border-radius: 12px;
 	-webkit-border-radius: 12px;
 	border-radius: 12px;
