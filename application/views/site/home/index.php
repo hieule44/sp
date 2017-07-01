@@ -31,7 +31,7 @@
 	        </center>
 	        <div class='action'>
 	          <p style='float:left;margin-left:10px'>Lượt xem: <b><?php echo $sp->view; ?></b></p>
-		        <a class='button' href="them-vao-gio-9.html" title='Mua ngay'>Mua ngay</a>
+		        <a class='button' href="<?php echo product_url('view/'.$sp->id.'/'.urlencode($sp->name)) ?>" title='Xem'>Xem chi tiết</a>
 		        <div class='clear'></div>
 	        </div>
         </div>

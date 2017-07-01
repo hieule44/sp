@@ -7,7 +7,7 @@
 <script type="text/javascript">
   $(function() {
     $( "#text-search" ).autocomplete({
-        source: "product/search_ac.html",
+        source: "<?php echo product_url('search/1');?>"
     });
   });
 </script>
@@ -20,14 +20,14 @@
 
        <!--  load gio hàng -->
   <div id="cart_expand" class="cart">
-        <a href="gio-hang.html" class="cart_link">
-               Giỏ hàng <span id="in_cart">0</span> sản phẩm
+        <a href="<?php echo cart_url(''); ?>" class="cart_link">
+               Giỏ hàng <span id="in_cart"><?php echo count($this->cart->contents());?></span> sản phẩm
         </a>
        <img alt="cart bnc" src="<?php echo public_url() ?>/site/images/cart.png">
   </div>
   <div id="search"><!-- the search -->
-			<form method="get" action="tim-kiem.html">
-			    <input type="text" id="text-search" name="key-search" value="" placeholder="Tìm kiếm sản phẩm..." class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
+			<form method="get" action="<?php echo product_url('search'); ?>">
+			    <input type="text" id="text-search" name="key-search" value="<?php echo isset($key) ? $key: ''; ?>" placeholder="Tìm kiếm sản phẩm..." class="ui-autocomplete-input" autocomplete="off" role="textbox" aria-autocomplete="list" aria-haspopup="true">
 				 <input type="submit" id="but" name="but" value="">
 			</form>
   </div><!-- End search -->

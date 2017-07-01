@@ -10,6 +10,9 @@ function home_url($url=''){
 function product_url($url=''){
 	return base_url('product/'.$url);
 }
+function cart_url($url=''){
+	return base_url('cart/'.$url);
+}
 
 function pre($list, $exit = true)
 {

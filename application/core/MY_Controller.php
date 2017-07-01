@@ -7,7 +7,7 @@
 		{
 			// ke thu tu CI_Controller
 			parent::__construct();
-
+			$this->load->library('cart');			
 			$controller = $this->uri->segment(1);
 			switch ($controller) {
 				case 'admin':

@@ -17,14 +17,20 @@
 		$id = $this->uri->rsegment('3');
 		$id = intval($id);
 		$product 			= $this->product_model->call_product_full_info($id);
-		//$product_same = $this->product_model->call_product_same_full_info($id);
+		$product_same = $this->product_model->call_product_same_full_info($id);
     if(!$product){
       redirect();
     }
-		$data['product'] = $product;
-		//$data['product_same'] = $product_same;
+    //cap nhat luot xem
+    $data['view'] = $product->view + 1;
+    $this->product_model->update($product->id,$data);
+    //end cap nhat luot xem
+    $image_list = @json_decode($product->image_list);
+    $data['product'] = $product; //object
+    $data['product_same'] = $product_same; //array
+		$data['image_list'] = $image_list;
 		$data['temp'] = 'site/product/product';//view index home
-		//pre($product_same);
+		//pre($data['product_same']);
 		$this->load->view('site/layout', $data);
 	}
 
@@ -81,6 +87,61 @@
  		$data['list'] = $list;//danh sach san pham
     $data['temp'] = 'site/product/catalog';
     $this->load->view('site/layout', $data);
+  }
+
+  function search(){
+    $input = array();
+    $data  = array();
+    //lay key-search tren url
+    if($this->uri->segment(3) == 1)
+    {
+      $key = $this->input->get('term');
+    }else
+    {
+      $key = $this->input->get('key-search');
+    }
+
+    $input['like'] = array('name', $key);
+    // lấy danh sách sản phẩm
+    $list = $this->product_model->get_list($input);
+ 		$data['list'] = $list;//danh sach san pham
+    $data['key'] = $key;
+    if($this->uri->segment(3) == 1)
+    {
+      $result = array();
+      foreach ($list as $row) {
+        $item = array();
+        $item['id'] = $row->id;
+        $item['label'] = $row->name;
+        $item['value'] = $row->name;
+        $result[] = $item;
+      }
+      //tra ve Json
+      die(json_encode($result));
+    }else
+    {
+      $data['temp'] = 'site/product/search';
+      $this->load->view('site/layout', $data);
+    }
+  }
+
+  function search_price(){
+    $input = array();
+    $data  = array();
+    //lay key-search tren url
+    $price_from = intval($this->input->get('price_from'));
+    $price_to = intval($this->input->get('price_to'));
+
+
+    $input['where'] = array('price >=' => $price_from, 'price <=' => $price_to);
+    // lấy danh sách sản phẩm
+    $list = $this->product_model->get_list($input);
+ 		$data['list'] = $list;//danh sach san pham
+    $data['price_from'] = $price_from;
+    $data['price_to'] = $price_to;
+    $data['temp'] = 'site/product/search_price';
+    $this->load->view('site/layout', $data);
+
   }
 
  }

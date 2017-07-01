@@ -74,7 +74,7 @@
 }
 .t-form .input:hover, .t-form .input:focus {
     border: 1px solid #B6DE5E;
-    box-shadow: #B6DE5E;
+    box-shadow:1px 1px 5px #B6DE5E;
     color: #333333;
 }
 .t-form input.input {
@@ -134,7 +134,6 @@
 .t-form .button
 {
     background: #3B5998 !important;
-    border-radius: 5px;
 	border:none;
     color: #FFFFFF;
     cursor: pointer;

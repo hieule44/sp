@@ -1,8 +1,6 @@
 .product .product_item
 {
 	border: 1px solid #DDDDDD;
-
-  padding: 8px 0px;
 	width:175px;
 	height: 288px;
 	float:left;
@@ -13,9 +11,12 @@
 {
 	border: 1px solid #FF9900;
 }
+.product h3
+{
+	margin: 10px 0px;
+}
 .product h3 a
 {
-
 	font-size:13px;
 }
 .product div.action
@@ -32,9 +33,8 @@
 .product a.button
 {
 	background: none repeat scroll 0 0 #3B5998 !important;
-    border: medium none;
-    border-radius: 5px;
-    color: #FFFFFF;
+  border: medium none;
+  color: #FFFFFF;
 	padding:5px;
 	float:right;
 	margin-right:10px;

@@ -41,7 +41,7 @@ class MY_Model extends CI_Model {
 
 		$where = array();
 	 	$where[$this->key] = $id;
-	    $this->update_rule($where, $data);
+	  $this->update_rule($where, $data);
 
 	 	return TRUE;
 	}
