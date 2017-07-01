@@ -22,9 +22,10 @@
       redirect();
     }
 		$data['product'] = $product;
-		//$data['product_same'] = $product_same;
+    $image_list = @json_decode($product->image_list);
+		$data['image_list'] = $image_list;
 		$data['temp'] = 'site/product/product';//view index home
-		//pre($product_same);
+		//pre($data['image_list']);
 		$this->load->view('site/layout', $data);
 	}
 

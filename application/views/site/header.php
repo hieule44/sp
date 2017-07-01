@@ -37,7 +37,7 @@
   </div><!-- End top -->			   <!-- End box-header  -->
 
                <!-- The box-header-->
-	<div id="menu"><!-- the menu -->
+	<div id="menu" class="w3-theme-d4"><!-- the menu -->
            <ul class="menu_top">
                 <li class="active index-li"><a href="<?php echo home_url(); ?>">Trang chủ </a></li>
                 <!--<li class=""><a href="info/view/1.html">Giới thiệu</a></li>

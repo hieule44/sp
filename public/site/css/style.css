@@ -156,7 +156,6 @@ div.top
 .tittle-box-center {
     background: url("../images/menu.png") repeat-x;
     border-bottom: 2px solid #FF9900;
-    border-radius: 3px;
     float: left;
     height: 28px;
     line-height: 30px;
@@ -356,4 +355,7 @@ ul.news li a img
     margin: 5px 0;
 }
 .list_news .item_news .item_content {
+}
+.none {
+  display: none;
 }

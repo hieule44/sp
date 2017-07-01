@@ -21,12 +21,21 @@ $(document).ready(function() {
 				        </a>
 				         <div class='clear' style='height:10px'></div>
 				         <div class="clearfix" >
-							<ul id="thumblist" >
-							    <li>
-							    <a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo_product_iamge_upload($product->image_link)?>',largeimage: '<?php echo_product_iamge_upload($product->image_link)?>'}">
-							    <img src='<?php echo_product_iamge_upload($product->image_link)?>'>
-							    </a>
-							    </li>
+							<ul id="thumblist">
+								<li>
+									<a class="zoomThumbActive" href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo_product_iamge_upload($product->image_link)?>',largeimage: '<?php echo_product_iamge_upload($product->image_link)?>'}">
+										<img src='<?php echo_product_iamge_upload($product->image_link)?>'>
+									</a>
+								</li>
+									<?php if(is_array($image_list)): ?>
+										<?php foreach($image_list as $img): ?>
+											<li>
+										    <a href='javascript:void(0);' rel="{gallery: 'gal1', smallimage: '<?php echo_product_iamge_upload($img)?>',largeimage: '<?php echo_product_iamge_upload($img)?>'}">
+										    	<img src='<?php echo_product_iamge_upload($img)?>'>
+										    </a>
+									    </li>
+										<?php endforeach; ?>
+									<?php endif; ?>
 							</ul>
 						</div>
 		           </div>

@@ -1,11 +1,13 @@
 <meta http-equiv="Content-Type" content="text/html ;charset=utf-8" />
         <!-- the CSS -->
+
         <link type="text/css" href="<?php echo public_url() ?>/site/css/reset.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/style.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/menu.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/input.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/product.css" rel="stylesheet" />
         <link type="text/css" href="<?php echo public_url() ?>/site/css/slide-flim.css" rel="stylesheet" />
+        <link type="text/css" href="<?php echo public_url() ?>/site/css/w3-theme-custom.css" rel="stylesheet" />
         <!-- End CSS -->
         <link rel="icon" href="<?php echo public_url() ?>/site/images/icon.png" type="image/x-icon" />
         <!-- the Javascript -->

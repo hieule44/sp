@@ -1,5 +1,5 @@
-      <div class="box-left">
-         <div class="title tittle-box-left">
+      <div class="box-left" class="">
+         <div class="title tittle-box-left w3-theme-d3">
 			  <h2> Tìm kiếm theo giá </h2>
 		</div>
 		<div class="content-box" ><!-- The content-box -->
