@@ -1,7 +1,4 @@
 <?php
-/**
- *
- */
  class Product extends MY_Controller
  {
  	function __construct()
